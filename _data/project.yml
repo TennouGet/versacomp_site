@@ -15,14 +15,14 @@ overview: >
   of computational tasks can result in substantial improvements in performance, energy efficiency, and cost-effectiveness.
 
 objectives:
-  - title: "01. General AI Offload"
-    description: "Adapting non-machine-learning workloads to execute directly on specialized matrix and vector engines."
+  - title: "01. Heterogeneous Architectural Profiling"
+    description: "Benchmark modern processors and AI-capable execution units to identify bottlenecks and map ideal computational patterns across disparate architectures."
   
-  - title: "02. Energy Optimization"
-    description: "Substantially lowering energy per instruction by using low-power hardware blocks for standard computing logic."
+  - title: "02. Unified Hardware Abstraction"
+    description: "Develop dedicated abstraction layers that standardize hardware access across diverse CPUs, NPUs, and accelerators through a cohesive programming interface."
 
-  - title: "03. System Integration"
-    description: "Designing modern software dispatch pipelines so developers can harness hardware without low-level manual assembly."
+  - title: "03. Intelligent Workload Routing"
+    description: "Construct an integrated application runtime that dynamically routes computational tasks to the optimal hardware engine, maximizing energy efficiency and overall throughput."
 
 phases:
   - name: "Phase 1: Architecture Profiling"
