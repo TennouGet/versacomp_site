@@ -2,10 +2,11 @@
 # PROJECT DATA (Edit your content here!)
 # ==========================================
 
-badge: "Research Initiative"
+badge: "Research Project"
 title: "VERSACOMP"
 tagline: "VERSAtile COMPuting with Advanced Processor Architectures"
-meta: "Heterogeneous Systems Research • Active Project"
+meta: "Heterogeneous Systems Research"
+date: "2025 – 2028"
 
 overview: >
   The advent of processors with Artificial Intelligence (AI) capabilities represents a significant leap forward. 
@@ -15,7 +16,7 @@ overview: >
 
 objectives:
   - title: "01. General AI Offload"
-    description: "Adapting compute-heavy non-machine-learning workloads to execute directly on specialized matrix and vector engines."
+    description: "Adapting non-machine-learning workloads to execute directly on specialized matrix and vector engines."
   
   - title: "02. Energy Optimization"
     description: "Substantially lowering energy per instruction by using low-power hardware blocks for standard computing logic."
@@ -25,18 +26,17 @@ objectives:
 
 phases:
   - name: "Phase 1: Architecture Profiling"
-    summary: "Initial architectural profiling of existing AI coprocessors and identification of vector register bottlenecks."
-    status: "Completed"
-
-  - name: "Phase 2: Translation Runtime"
-    summary: "Developing an intermediate scheduling layer that automatically dispatches mathematical workloads to AI matrix units."
+    summary: "Initial architectural profiling of existing AI coprocessors and identification of possible bottlenecks."
     status: "In Progress"
 
-  - name: "Phase 3: Validation & Benchmark"
-    summary: "Comparative performance and power analysis against conventional CPU and discrete GPU baselines."
+  - name: "Phase 2: Hardware Abstraction Layer"
+    summary: "Developing dedicated abstraction layers for distinct target hardware, standardizing access across disparate CPUs, NPUs, and accelerators."
+    status: "In Progress"
+
+  - name: "Phase 3: Integrated Application & Workload Routing"
+    summary: "Implementing a unified application framework that dynamically analyzes tasks and routes workloads to the optimal compute engine based on efficiency and throughput."
     status: "In Progress"
 
 info:
-  affiliation: "[Department or Research Group]"
-  institution: "[University or Organization Name]"
-  email: "contact@example.com"
+  affiliation: "[INESC-ID]"
+  email: "versacomp@inesc-id.com"
