@@ -1,11 +1,287 @@
+---
+---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First GitHub Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.project.title }} — {{ site.data.project.tagline }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --primary: #0f4c81;
+            --primary-dark: #0a2540;
+            --accent-green: #0d9488;
+            --accent-green-bg: #ccfbf1;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.65;
+            font-size: 16px;
+        }
+
+        .header-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-green) 100%);
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+
+        .hero {
+            padding: 40px 0 35px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            line-height: 1.15;
+        }
+
+        .hero p.tagline {
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .hero p.meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        section { margin-bottom: 45px; }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .callout-box {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            color: #334155;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .obj-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .obj-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .obj-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .phases-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .phases-table th {
+            background-color: var(--surface);
+            color: var(--text-muted);
+            text-align: left;
+            padding: 12px 18px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .phases-table td {
+            padding: 18px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .phases-table tr:last-child td { border-bottom: none; }
+
+        .status {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-completed { background-color: var(--accent-green-bg); color: #0f766e; }
+        .status-in-progress { background-color: #fef3c7; color: #b45309; }
+        .status-upcoming { background-color: #f1f5f9; color: #475569; }
+
+        .info-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a { color: var(--primary); font-weight: 500; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 50px;">
-    <h1>Hello, World!</h1>
-    <p>VERSACOMP: VERSAtile COMPuting with Advanced Processor Architectures</p>
-<p>The advent of processors with Artificial Intelligence (AI) capabilities represents a significant leap forward. This project aims at redefining the boundaries of what is possible with general-purpose computing. Unlocking the full capabilities of modern heterogeneous systems with AI-enhanced processors for a broader range of computational tasks can result in substantial improvements in performance, energy efficiency, and cost-effectiveness.</p>
+<body>
+
+    <div class="header-bar"></div>
+
+    <div class="container">
+
+        <!-- Header / Hero -->
+        <header class="hero">
+            <span class="badge">{{ site.data.project.badge }}</span>
+            <h1>{{ site.data.project.title }}</h1>
+            <p class="tagline">{{ site.data.project.tagline }}</p>
+            <p class="meta">{{ site.data.project.meta }}</p>
+        </header>
+
+        <!-- Overview -->
+        <section id="overview">
+            <h2>Overview</h2>
+            <div class="callout-box">
+                <p>{{ site.data.project.overview }}</p>
+            </div>
+        </section>
+
+        <!-- Objectives Loop -->
+        <section id="objectives">
+            <h2>Core Objectives</h2>
+            <div class="objectives-grid">
+                {% for obj in site.data.project.objectives %}
+                <div class="obj-card">
+                    <h3>{{ obj.title }}</h3>
+                    <p>{{ obj.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Phases Loop -->
+        <section id="phases">
+            <h2>Work Done & Phases</h2>
+            <table class="phases-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Phase</th>
+                        <th style="width: 55%;">Work Summary</th>
+                        <th style="width: 20%;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for phase in site.data.project.phases %}
+                    <tr>
+                        <td><strong>{{ phase.name }}</strong></td>
+                        <td>{{ phase.summary }}</td>
+                        <td>
+                            {% assign s = phase.status | downcase | replace: ' ', '-' %}
+                            <span class="status status-{{ s }}">{{ phase.status }}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Project Info -->
+        <section id="info">
+            <h2>Project Information</h2>
+            <div class="info-card">
+                <p><strong>Affiliation:</strong> {{ site.data.project.info.affiliation }}</p>
+                <p style="margin-top: 6px;"><strong>Institution:</strong> {{ site.data.project.info.institution }}</p>
+                <p style="margin-top: 6px;"><strong>Contact:</strong> <a href="mailto:{{ site.data.project.info.email }}">{{ site.data.project.info.email }}</a></p>
+            </div>
+        </section>
+
+        <footer>
+            <span>{{ site.data.project.title }} Project</span>
+            <span>Hosted on GitHub Pages</span>
+        </footer>
+
+    </div>
+
 </body>
 </html>
