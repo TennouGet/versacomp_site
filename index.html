@@ -216,7 +216,7 @@
             <span class="badge">{{ site.data.project.badge }}</span>
             <h1>{{ site.data.project.title }}</h1>
             <p class="tagline">{{ site.data.project.tagline }}</p>
-            <p class="meta">{{ site.data.project.meta }}</p>
+            <p class="meta">{{ site.data.project.meta }} &bull; {{ site.data.project.date }}</p>
         </header>
 
         <!-- Overview -->
@@ -271,7 +271,6 @@
             <h2>Project Information</h2>
             <div class="info-card">
                 <p><strong>Affiliation:</strong> {{ site.data.project.info.affiliation }}</p>
-                <p style="margin-top: 6px;"><strong>Institution:</strong> {{ site.data.project.info.institution }}</p>
                 <p style="margin-top: 6px;"><strong>Contact:</strong> <a href="mailto:{{ site.data.project.info.email }}">{{ site.data.project.info.email }}</a></p>
             </div>
         </section>
