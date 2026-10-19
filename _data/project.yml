@@ -1,0 +1,42 @@
+# ==========================================
+# PROJECT DATA (Edit your content here!)
+# ==========================================
+
+badge: "Research Initiative"
+title: "VERSACOMP"
+tagline: "VERSAtile COMPuting with Advanced Processor Architectures"
+meta: "Heterogeneous Systems Research • Active Project"
+
+overview: >
+  The advent of processors with Artificial Intelligence (AI) capabilities represents a significant leap forward. 
+  This project aims at redefining the boundaries of what is possible with general-purpose computing. 
+  Unlocking the full capabilities of modern heterogeneous systems with AI-enhanced processors for a broader range 
+  of computational tasks can result in substantial improvements in performance, energy efficiency, and cost-effectiveness.
+
+objectives:
+  - title: "01. General AI Offload"
+    description: "Adapting compute-heavy non-machine-learning workloads to execute directly on specialized matrix and vector engines."
+  
+  - title: "02. Energy Optimization"
+    description: "Substantially lowering energy per instruction by using low-power hardware blocks for standard computing logic."
+
+  - title: "03. System Integration"
+    description: "Designing modern software dispatch pipelines so developers can harness hardware without low-level manual assembly."
+
+phases:
+  - name: "Phase 1: Architecture Profiling"
+    summary: "Initial architectural profiling of existing AI coprocessors and identification of vector register bottlenecks."
+    status: "Completed"
+
+  - name: "Phase 2: Translation Runtime"
+    summary: "Developing an intermediate scheduling layer that automatically dispatches mathematical workloads to AI matrix units."
+    status: "In Progress"
+
+  - name: "Phase 3: Validation & Benchmark"
+    summary: "Comparative performance and power analysis against conventional CPU and discrete GPU baselines."
+    status: "In Progress"
+
+info:
+  affiliation: "[Department or Research Group]"
+  institution: "[University or Organization Name]"
+  email: "contact@example.com"
