@@ -270,7 +270,7 @@
         <section id="info">
             <h2>Project Information</h2>
             <div class="info-card">
-                <p><strong>Affiliation:</strong> {{ site.data.project.info.affiliation }}</p>
+                <p><strong>Affiliation:</strong> <a href="{{ site.data.project.info.affiliation_url }}" target="_blank" rel="noopener noreferrer"><strong>{{ site.data.project.info.affiliation_name }}</strong></a></p>
                 <p style="margin-top: 6px;"><strong>Contact:</strong> <a href="mailto:{{ site.data.project.info.email }}">{{ site.data.project.info.email }}</a></p>
             </div>
         </section>
