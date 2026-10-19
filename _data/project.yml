@@ -38,5 +38,6 @@ phases:
     status: "In Progress"
 
 info:
-  affiliation: "[INESC-ID]"
+  affiliation_name: "INESC-ID"
+  affiliation_url: "https://www.inesc-id.pt/"
   email: "versacomp@inesc-id.com"
